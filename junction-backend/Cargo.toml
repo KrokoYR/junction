@@ -1,0 +1,42 @@
+[package]
+name = "junction"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.7", features = ["macros"] }
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+base64 = "0.21"
+ed25519-dalek = "1.0"
+rand = "0.8"
+chrono = { version = "0.4", features = ["serde"] }
+sqlx = { version = "0.7", features = [
+    "runtime-tokio-rustls",
+    "postgres",
+    "chrono",
+    "time",
+    "uuid",
+] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tower-http = { version = "0.5", features = ["trace", "limit", "cors"] }
+tower = { version = "0.5.1", features = ["buffer", "limit"] }
+thiserror = "1.0"
+validator = { version = "0.16", features = ["derive"] }
+dotenv = "0.15"
+time = { version = "0.3", features = ["serde"] }
+uuid = { version = "1.0", features = ["serde", "v4"] }
+qrcode = "0.12"
+ring = "0.16"
+async-trait = "0.1"
+signature = "2.2.0"
+hmac = "0.12.1"
+axum-extra = { version = "0.9.4", features = ["cookie", "typed-header"] }
+jsonwebtoken = "9.3.0"
+async-openai = "0.25.0"
+
+[profile.release]
+opt-level = 3

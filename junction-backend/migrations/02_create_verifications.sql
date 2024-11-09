@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS verifications (
+    id UUID PRIMARY KEY,
+    public_token TEXT NOT NULL,
+    is_verified BOOLEAN NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
